@@ -1,0 +1,31 @@
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.horizontal {
+  background-size: contain;
+  height: 70vh;
+  width: 48%;
+  background-repeat: no-repeat;margin: 0 auto;
+}
+
+.vertical {
+  background-size: contain;
+  height: 91vh;
+  width: 33vw;
+  background-repeat: no-repeat;margin: 0 auto;
+}
+
+.page_1 {
+  background-image: url(../img/pag_1.png);
+}
+
+.page_2 {
+  background-image: url(../img/pag_2.png);
+}
+
+.page_3 {
+  background-image: url(../img/pag_3.png);
+}
