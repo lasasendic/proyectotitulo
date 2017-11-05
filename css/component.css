@@ -1,5 +1,9 @@
 html, body { height: 100%; }
 
+body {
+	background-image: url(../img/background.jpg);
+}
+
 .pt-perspective {
 	position: relative;
 	width: 100vw;
@@ -74,7 +78,7 @@ html, body { height: 100%; }
 }
 
 .pt-page {
-	background: white;
+	
 }
 
 /* Triggers (menu and button) */
