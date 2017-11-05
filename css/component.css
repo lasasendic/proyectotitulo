@@ -73,27 +73,7 @@ html, body { height: 100%; }
 	color: rgba(0,0,0,0.1);
 }
 
-.pt-page-1 {
-	background: white;
-}
-
-.pt-page-2 {
-	background: white;
-}
-
-.pt-page-3 {
-	background: white;
-}
-
-.pt-page-4 {
-	background: white;
-}
-
-.pt-page-5 {
-	background: white;
-}
-
-.pt-page-6 {
+.pt-page {
 	background: white;
 }
 
