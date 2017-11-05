@@ -111,25 +111,8 @@
   background-image: url(../img/pag_20.png);
 }
 
-/* ----------- iPhone 4 and 4S ----------- */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (orientation: landscape) {
-    
-    body {
-      background-image: none;
-    }
 
-    .next-page {
-      background-color: red;
-    }
-
-}
-
-
-/* ----------- Galaxy S4, S5 and Note 3 ----------- */
-/* Smartphones (landscape) ----------- */
+/* Cambios para mobile apaisado van aquí */
 @media only screen 
 and (max-width:1024px) and (orientation: landscape){
   body {
@@ -139,4 +122,13 @@ and (max-width:1024px) and (orientation: landscape){
   #next-page {
     background-color: red;
   }
+
+  .horizontal {
+    width: 85vh;
+    height: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
 }
