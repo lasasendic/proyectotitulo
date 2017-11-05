@@ -2,7 +2,9 @@ var PageTransitions = (function() {
 
 	var $main = $( '#pt-main' ),
 		$pages = $main.children( 'div.pt-page' ),
-		$iterate = $( '#iterateEffects' ),
+		$nextPageButton = $( '#next-page' ),
+		$prevPageButton = $( '#prev-page' ),
+		$firstPageButton = $( '#first-page' ),
 		animcursor = 1,
 		pagesCount = $pages.length,
 		current = 0,
@@ -55,36 +57,137 @@ var PageTransitions = (function() {
         return animcursor;
     };
 
+    // Keyboard binding
     $( "body" ).keyup(function(event) {
         var key = event.which;
 
-        if ( key == keys.RIGHT || key == keys.SPACE || key == keys.ENTER || key == keys.DOWN || key == keys.PAGE_DOWN ) {
+        if ( key == keys.RIGHT || key == keys.SPACE) {
             nextPage( animcursorCheck() );
             ++animcursor;
         }
-        if ( key == keys.LEFT || key == keys.BACKSPACE || key == keys.PAGE_UP ) {
+        if ( key == keys.LEFT) {
             --animcursor;
-            nextPage( animcursorCheck() );
+            prevPage( animcursorCheck() );
         }
     });
 
-    $iterate.on( 'click', function() {
+    $nextPageButton.on( 'click', function() {
         nextPage( animcursorCheck() );
         ++animcursor;
     } );
 
+    $prevPageButton.on( 'click', function() {
+        prevPage( animcursorCheck() );
+        --animcursor;
+    } );
+
+    $firstPageButton.on( 'click', function() {
+    	animcursor = 1;
+    	firstPage()
+    })
+
 	}
 
-	function backPage(options) {
-		// outClass = 'pt-page-rotatePushRight';
-		// inClass = 'pt-page-moveFromLeft';
+	function firstPage(options) {
+		if( isAnimating ) {
+			return false;
+		}
+
+		if (current == 0 ) {
+			// Do nothing if already at begining
+			return;
+		}
+
+		isAnimating = true;
+
+
+		var $currPage = $pages.eq( current );
+		// Current now should be 0, so that $nextPage is actual first page
+		current = 0;
+		
+		var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' );
+		var outClass = 'pt-page-rotatePushRight',
+				inClass = 'pt-page-moveFromLeft';
+
+		$currPage.addClass( outClass ).on( animEndEventName, function() {
+			$currPage.off( animEndEventName );
+			endCurrPage = true;
+			if( endNextPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		$nextPage.addClass( inClass ).on( animEndEventName, function() {
+			$nextPage.off( animEndEventName );
+			endNextPage = true;
+			if( endCurrPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		if( !support ) {
+			onEndAnimation( $currPage, $nextPage );
+		}
+	}
+
+	function prevPage(options) {
+		if( isAnimating ) {
+			return false;
+		}
+
+		if (current == 0 ) {
+			//Do nothing
+			return;
+		}
+
+		isAnimating = true;
+		
+		var $currPage = $pages.eq( current );
+
+		if(typeof options.showPage != 'undefined'){
+			if( options.showPage == 0 ) {
+				current = options.showPage;
+			}
+		}
+		else{
+			if( current > 0 ) {
+				--current;
+			}
+		}
+
+		var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' );
+		var outClass = 'pt-page-rotatePushRight',
+				inClass = 'pt-page-moveFromLeft';
+
+		$currPage.addClass( outClass ).on( animEndEventName, function() {
+			$currPage.off( animEndEventName );
+			endCurrPage = true;
+			if( endNextPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		$nextPage.addClass( inClass ).on( animEndEventName, function() {
+			$nextPage.off( animEndEventName );
+			endNextPage = true;
+			if( endCurrPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		if( !support ) {
+			onEndAnimation( $currPage, $nextPage );
+		}
 	}
 
 	function nextPage(options ) {
-		// var animation = (options.animation) ? options.animation : options;
-
 		if( isAnimating ) {
 			return false;
+		}
+
+		if (current == pagesCount - 1) {
+			// Do nothing if last page
+			return;
 		}
 
 		isAnimating = true;
@@ -104,13 +207,14 @@ var PageTransitions = (function() {
 				++current;
 			}
 			else {
-				current = 0;
+				return;
 			}
 		}
 
 		var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' );
 		var outClass = 'pt-page-rotatePushLeft';
 				inClass = 'pt-page-moveFromRight';
+
 
 		$currPage.addClass( outClass ).on( animEndEventName, function() {
 			$currPage.off( animEndEventName );
