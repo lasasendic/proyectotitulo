@@ -1,7 +1,10 @@
 html, body { height: 100%; }
 
 body {
-	background-image: url(../img/background.jpg);
+	/* background: url(../img/background.png) no-repeat fixed center; fcf7d3  #fcfaec   */
+	background: url(../img/background.png) no-repeat fixed center, linear-gradient(#fcf7d3, #fcfaec);
+	background-size: contain;
+	background-position: center bottom;
 }
 
 .pt-perspective {
@@ -102,7 +105,16 @@ body {
 
 .pt-triggers .dl-menuwrapper button,
 .pt-touch-button {
-	border: none;
+	width: 50%;
+	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+  	height: 100%;
+  	align-items: center;
+
+	}
+
+	/* border: none;
 	font-size: 13px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -121,12 +133,51 @@ body {
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none;
+	user-select: none; */
+
+
+.left-button {
+	position: fixed;
+	z-index: 999999;
+	top: 40%;
+	left: 10%;
 }
 
-.pt-touch-button {
-	background: #fff;
-	color: #aaa;
+.right-button {
+	position: fixed;
+	z-index: 999999;
+	top: 40%;
+	right: 10%;
+}
+
+#next-page {
+	background: url(../img/btn_sig.png) no-repeat center;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	height: 10rem;
+	width: 4rem;
+	display: inline-block;
+}
+
+#prev-page {
+	background-image: url(../img/btn_pre.png);
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	height: 10rem;
+	width: 4rem;
+	display: inline-block;
+}
+
+#first-page {
+	background-image: url(../img/btn_inicio.png);
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	height: 10rem;
+	width: 4rem;
+	display: inline-block;
 }
 
 .pt-triggers .dl-menuwrapper button {
@@ -134,7 +185,7 @@ body {
 }
 
 .pt-touch-button:active {
-	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+	/* box-shadow: 0 1px 0 rgba(0,0,0,0.1); */
 }
 
 .touch .pt-triggers .dl-menuwrapper {
