@@ -2,7 +2,7 @@ html, body { height: 100%; }
 
 body {
 	/* background: url(../img/background.png) no-repeat fixed center; fcf7d3  #fcfaec   */
-	background: url(../img/background.png) no-repeat fixed center, linear-gradient(#fcf7d3, #fcfaec);
+	background: url(../img/background.png) no-repeat center, linear-gradient(#fcf7d3, #fcfaec);
 	background-size: contain;
 	background-position: center bottom;
 }
