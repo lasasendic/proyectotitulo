@@ -188,7 +188,7 @@ and (max-width:1024px) and (orientation: landscape){
   }
 
   .horizontal {
-    width: 100vh;
+    width: 130vh;
     height: 100vw;
     background-repeat: no-repeat;
     background-position: center;
