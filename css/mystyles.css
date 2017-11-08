@@ -118,32 +118,32 @@ and (max-width:1024px){
   .left-button {
     position: fixed;
     z-index: 999999;
-    top: 89%;
+    top: 91%;
     left: 25%;
     height: 25%;
   }
 
   #prev-page {
-    height: 35%;
-    width: 1.5rem;
+    height: 30%;
+    width: 2rem;
   }
 
   #first-page {
-    height: 35%;
-    width: 1.5rem;
+    height: 30%;
+    width: 2rem;
   }
 
   .right-button {
     position: fixed;
     z-index: 999999;
-    top: 89%;
+    top: 91%;
     right: 25%;
     height: 25%;
   }
 
   #next-page {
-    height: 35%;
-    width: 1.5rem;
+    height: 30%;
+    width: 2rem;
   }
 
 }
@@ -159,32 +159,32 @@ and (max-width:1024px) and (orientation: landscape){
   .left-button {
     position: fixed;
     z-index: 999999;
-    top: 50%;
-    left: 5%;
+    top: 91%;
+    left: 3%;
     height: 25%;
   }
 
   #prev-page {
-    height: 60%;
-    width: 1.5rem;
+    height: 30%;
+    width: 2rem;
   }
 
   #first-page {
-    height: 60%;
-    width: 1.5rem;
+    height: 30%;
+    width: 2rem;
   }
 
    .right-button {
     position: fixed;
     z-index: 999999;
-    top: 50%;
-    right: 5%;
+    top: 91%;
+    right: 3%;
     height: 25%;
   }
 
   #next-page {
-    height: 60%;
-    width: 1.5rem;
+    height: 30%;
+    width: 2rem;
   }
 
   .horizontal {
