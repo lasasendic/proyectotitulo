@@ -118,32 +118,38 @@ and (max-width:1024px){
   .left-button {
     position: fixed;
     z-index: 999999;
-    top: 91%;
+    top: 90%;
     left: 25%;
     height: 25%;
   }
 
   #prev-page {
-    height: 30%;
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   #first-page {
-    height: 30%;
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .right-button {
     position: fixed;
     z-index: 999999;
-    top: 91%;
+    top: 90%;
     right: 25%;
     height: 25%;
   }
 
   #next-page {
-    height: 30%;
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
 }
@@ -159,36 +165,42 @@ and (max-width:1024px) and (orientation: landscape){
   .left-button {
     position: fixed;
     z-index: 999999;
-    top: 91%;
+    top: 85%;
     left: 3%;
     height: 25%;
   }
 
   #prev-page {
-    height: 30%;
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   #first-page {
-    height: 30%;
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
    .right-button {
     position: fixed;
     z-index: 999999;
-    top: 91%;
+    top: 85%;
     right: 3%;
     height: 25%;
   }
 
   #next-page {
-    height: 30%;
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .horizontal {
-    width: 130vh;
+    width: 110vh;
     height: 100vw;
     background-repeat: no-repeat;
     background-position: center;
