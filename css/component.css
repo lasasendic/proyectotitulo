@@ -7,6 +7,10 @@ body {
 	background-position: center bottom;
 }
 
+button:focus {
+	outline: 0;
+}
+
 .pt-perspective {
 	position: relative;
 	width: 100vw;

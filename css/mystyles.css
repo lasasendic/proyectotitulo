@@ -111,24 +111,106 @@
   background-image: url(../img/pag_20.png);
 }
 
+/* Cambios para mobile apaisado van aquí */
+@media only screen 
+and (max-width:1024px){
+
+  .left-button {
+    position: fixed;
+    z-index: 999999;
+    top: 89%;
+    left: 25%;
+    height: 25%;
+  }
+
+  #prev-page {
+    height: 35%;
+    width: 1.5rem;
+  }
+
+  #first-page {
+    height: 35%;
+    width: 1.5rem;
+  }
+
+  .right-button {
+    position: fixed;
+    z-index: 999999;
+    top: 89%;
+    right: 25%;
+    height: 25%;
+  }
+
+  #next-page {
+    height: 35%;
+    width: 1.5rem;
+  }
+
+}
+
 
 /* Cambios para mobile apaisado van aquí */
 @media only screen 
 and (max-width:1024px) and (orientation: landscape){
   body {
-    
+
+  }
+
+  .left-button {
+    position: fixed;
+    z-index: 999999;
+    top: 50%;
+    left: 5%;
+    height: 25%;
+  }
+
+  #prev-page {
+    height: 60%;
+    width: 1.5rem;
+  }
+
+  #first-page {
+    height: 60%;
+    width: 1.5rem;
+  }
+
+   .right-button {
+    position: fixed;
+    z-index: 999999;
+    top: 50%;
+    right: 5%;
+    height: 25%;
   }
 
   #next-page {
-    background-color: red;
+    height: 60%;
+    width: 1.5rem;
   }
 
+  .horizontal {
+    width: 100vh;
+    height: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .vertical {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+  }
+
+  /*
   .horizontal {
     width: 85vh;
     height: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-  }
+  } */
 
 }
