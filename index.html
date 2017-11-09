@@ -33,8 +33,12 @@
 		</div>
 		
 		<div class="right-button">
-      		<button id="next-page" class="pt-touch-button"></button>
+      	<button id="next-page" class="pt-touch-button"></button>
 		</div>
+
+    <div class="modal">
+      Desliza a la derecha
+    </div>
 
 <!-- 		<div class="pt-triggers">
 			<button id="first-page" class="pt-touch-button"></button>
@@ -162,5 +166,54 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/jquery.dlmenu.js"></script>
 		<script src="js/pagetransitions.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+
+    <script>
+
+
+      var timeout = null;
+
+      function hideModal() {
+        $('.modal').removeClass('active');
+      }
+
+      function showModal() {
+        $('.modal').addClass('active');
+        if(timeout !== null) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+
+        timeout = setTimeout(function() {
+          hideModal();
+        }, 1500);
+      }
+
+      
+
+      $(function() {
+        showModal();
+        $("body").swipe( {
+          //Generic swipe handler for all directions
+          swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+            if(direction === 'right') {
+              $('#prev-page').click();
+              
+            } else if (direction === 'left') {
+              $('#next-page').click();
+            } else {
+
+            }
+          },
+          tap: function(e) {
+            showModal();
+          }
+
+
+        });
+
+        
+      });
+    </script>
 	</body>
 </html>

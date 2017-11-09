@@ -143,15 +143,16 @@ button:focus {
 .left-button {
 	position: fixed;
 	z-index: 999999;
-	top: 40%;
-	left: 8%;
+
+	top: calc(50% - 3rem);
+    left: calc(10% - 1.5rem);
 }
 
 .right-button {
 	position: fixed;
 	z-index: 999999;
-	top: 40%;
-	right: 8%;
+	top: calc(50% - 3rem);
+    left: calc(90% - 3rem);
 }
 
 #next-page {

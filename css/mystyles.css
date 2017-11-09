@@ -23,6 +23,33 @@
   margin: 0 auto;
 }
 
+.modal {
+  position: absolute;
+  height: 2.5rem;
+  width: 60%;
+  top: calc(50% - 2.5rem);
+  left: 20%;
+  z-index: 999999999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s opacity;
+
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+  background-color: black;
+  color: white;
+}
+
+.modal.active {
+  opacity: 1;
+  transition: 0.5s opacity;
+  pointer-events: all;
+}
+
 .cover {
   background-image: url(../img/cover.png);
 }
@@ -111,16 +138,18 @@
   background-image: url(../img/pag_20.png);
 }
 
-/* Cambios para mobile apaisado van aquí */
+/* Cambios para mobile vertical van aquí */
 @media only screen 
 and (max-width:1024px){
 
   .left-button {
     position: fixed;
     z-index: 999999;
-    top: 90%;
+    top: 50%;
     left: 25%;
     height: 25%;
+    display: none;
+
   }
 
   #prev-page {
@@ -140,9 +169,10 @@ and (max-width:1024px){
   .right-button {
     position: fixed;
     z-index: 999999;
-    top: 90%;
+    top: 91%;
     right: 25%;
     height: 25%;
+    display: none;
   }
 
   #next-page {
@@ -165,36 +195,37 @@ and (max-width:1024px) and (orientation: landscape){
   .left-button {
     position: fixed;
     z-index: 999999;
-    top: 85%;
-    left: 3%;
-    height: 25%;
+    top: calc(50% - 3rem);
+    left: 5%;
+    display: none;
   }
 
   #prev-page {
-    height: 3rem;
-    width: 1.5rem;
+    height: 6rem;
+    width: 2.5rem;
     background-size: contain;
     background-repeat: no-repeat;
   }
 
   #first-page {
-    height: 3rem;
-    width: 1.5rem;
+    height: 6rem;
+    width: 2.5rem;
     background-size: contain;
     background-repeat: no-repeat;
+    display: none;
   }
 
    .right-button {
     position: fixed;
     z-index: 999999;
-    top: 85%;
-    right: 3%;
-    height: 25%;
+    top: calc(50% - 3rem);
+    left: 92%;
+    display: none;
   }
 
   #next-page {
-    height: 3rem;
-    width: 1.5rem;
+    height: 6rem;
+    width: 2.5rem;
     background-size: contain;
     background-repeat: no-repeat;
   }
