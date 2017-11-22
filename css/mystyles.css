@@ -121,6 +121,10 @@
   background-image: url(../img/pag_20.png);
 }
 
+.back_cover {
+  background-image: url(../img/contra_portada.png);
+}
+
 /* Cambios para mobile vertical van aquí */
 @media only screen 
 and (max-width:1024px){
